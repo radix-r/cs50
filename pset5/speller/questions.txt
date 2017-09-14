@@ -1,0 +1,39 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+    a disease of the lungs characterized by inflammation, coughing, and fibrosis caused by inhalation of very fine silicate or quartz dust    
+        
+1.  According to its man page, what does getrusage do?
+
+    getrusage returns resource usage measures such as cpu time used
+    
+2. Per that same man page, how many members are in a variable of type struct rusage?
+
+    there are 16 members in struct rusage, 2 of type struct timeval and 14 of type long
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+
+    My best guess is because pointers are eaiser to pass around than coppies 
+    
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, 
+convince us that you indeed understand how that function’s for loop work.
+
+    it goes through the file one char at a time confirming the the char is either an alphabetical character and apostrophe. only then
+    is the character added to the array of chars called word. If word becomes to long a while loop is used to chew through the remainder 
+    of the word and the index is reset to 0 in preperation of the next word. furthermore if a number digit is found once again the 
+    program uses a while loop to consume the remainder of the current world and the index is re set to 0. once the program runs into 
+    a character that is not alphabetical, an apostrophe, or a digit and the index is greater than 0 a potental word has been found.
+    a '\0' character is appended to the end of word and the counter holding the number of words is incremented. the word is then 
+    passed into a function that checks it against the currently loaded dictionary. if it isnt found in the dictionary the word is 
+    printed out. finaly the index is set to 0, ready to start another word. this is repeated untill the end of the file is reached. 
+    
+    
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" 
+to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+
+    the scanf function could potentaly read in characters that compicate the check function. reading in words character by character 
+    alows for a more thorough filtration of characters.
+    
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+
+    declaring peramiters as const means that they cannot be changed. doing this prevents the function from modifying the value passed
+    into it.
