@@ -1,5 +1,7 @@
 /**
+ * Author: Ross Wagner
  * Implements a dictionary's functionality.
+ *
  */
 
 #include <stdbool.h>
